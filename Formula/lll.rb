@@ -13,31 +13,32 @@
 class Lll < Formula
   desc "Linear-style issue tracker that runs from a single binary"
   homepage "https://github.com/escherize/lll"
-  version "0.2.0"
+  version "0.3.0"
 
   # No license field: the repo does not declare one. Add it here when it does.
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-darwin-arm64"
-      sha256 "a96713482515d5803a31d23dd1bf36dfdb85f07c6c1f1b19929d23cae1e37c9b"
+      sha256 "67cb5c5c7f521dbda368da60bf4fc656428d6e4472c5506d1f22dbfa7f0b1510"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-amd64"
-      sha256 "ea00a0761afffc46cdb09ffa055b46ae6f68d49d28b469f8d4ba739f1f3e9552"
+      sha256 "729790ad80306a534a29312c2879a910689d425e4c222aefc3e3154db90bc3a5"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-arm64"
-      sha256 "1fa8f5dd109c277f377b0e8f002016aace7e53422a182bb556ae40176a714b41"
+      sha256 "261ac6d25c73b77f8ac55baa4e11e9cff4474d6d95291b725014ef01a9acf2bf"
     end
   end
 
   def install
     # Release assets are bare binaries named per platform; the staged file
-    # keeps that name, so install renames it to lll.
+    # keeps that name, so install renames it to lll. (Verified by a real
+    # `brew install escherize/lll/lll` against the v0.2.0 tap.)
     if OS.mac?
       bin.install "lll-darwin-arm64" => "lll"
     elsif OS.linux? && Hardware::CPU.intel?
