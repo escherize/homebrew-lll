@@ -13,25 +13,25 @@
 class Lll < Formula
   desc "Linear-style issue tracker that runs from a single binary"
   homepage "https://github.com/escherize/lll"
-  version "0.6.0"
+  version "0.6.1"
 
   # No license field: the repo does not declare one. Add it here when it does.
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-darwin-arm64"
-      sha256 "1516bca81a54e9c4d4ea21ff3086ae296b88c328fc27fc76e52982904af1857b"
+      sha256 "c61c1b781e2252b5d9dab9dfa4a0ea9eb25bb0ead1ac4d453b41965b1979c53e"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-amd64"
-      sha256 "b3982ed00353e2f6ab3c77f1ebc922fc16a5274a35aacfd6464f46c652b3bdb1"
+      sha256 "e668cd4eb36c9ea9f2195b1bbe177aed3eaee648a28ee8a9d7c2da987e4e7e70"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-arm64"
-      sha256 "77a27327a8a2f6b952d6faebbc034213eedcedb7119fb6b27dc75d13ff3e9be0"
+      sha256 "fc2970ad213efb5d4d29dbc9d974c2b07a1ee115c4b2f7a3c7219afae0378b54"
     end
   end
 
