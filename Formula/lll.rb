@@ -13,25 +13,25 @@
 class Lll < Formula
   desc "Linear-style issue tracker that runs from a single binary"
   homepage "https://github.com/escherize/lll"
-  version "0.7.0"
+  version "0.8.0"
 
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-darwin-arm64"
-      sha256 "d32e823e105187e39ddbb83544e49bc7d699b2701db29e588964483e30cdb418"
+      sha256 "b44f364f2ff27ddaef4585f771ea3a53313006ea97d8bc3b09b897358e8fc2b5"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-amd64"
-      sha256 "d2259e50f3a462cafc97dc2381232aeded6ab27bd063972ec820974d96724e5f"
+      sha256 "833780592b56ac5ca355e66e2c86a34fc8a8ed4a9192348eb71d7cc1c1814fec"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-arm64"
-      sha256 "1999cc0c68d2c74c4d02c78d5c5504634c1edc09996c53524b738d40a21c4a66"
+      sha256 "e01a272c84c984c8dce6ecfba13027e4fe6248e1d4ff7eb1a73a54e14ed5c5d0"
     end
   end
 
