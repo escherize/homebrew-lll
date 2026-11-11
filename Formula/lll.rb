@@ -11,27 +11,27 @@
 # the tap push and this template is the source of truth to copy by hand.
 
 class Lll < Formula
-  desc "Linear-style issue tracker that runs from a single binary"
+  desc "Shared record for people and coding agents"
   homepage "https://github.com/escherize/lll"
-  version "1.6.0"
+  version "1.6.1"
 
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-darwin-arm64"
-      sha256 "6cf8139e2e9ac80cff436c8d4a2367c36f14597482d5d08a40f3e8556733dd1c"
+      sha256 "dc417aa442addf3698842401d12323e0f17b69d9347ea5653496f6f13eef94b9"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-amd64"
-      sha256 "75a5a72482d341dbf3376621815e760689a5b4f5763564984f1ae48245c40f69"
+      sha256 "4f9858bbfb200756cd6ca923c77542c3e1e5d5fe84d40d24e2d4a26c50fb4c17"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-arm64"
-      sha256 "2d2f38eb4e683aea1b981a0735de6a5b39e86ab19f159105d65b79b30c111b32"
+      sha256 "a0057b9f04f8adfeae6838d6fba38cefe1aa103e325a225d1cb660dc8eecf2ca"
     end
   end
 
