@@ -13,25 +13,25 @@
 class Lll < Formula
   desc "Shared record for people and coding agents"
   homepage "https://github.com/escherize/lll"
-  version "1.7.0"
+  version "1.8.0"
 
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-darwin-arm64"
-      sha256 "3692c09f2c24da042a8ba440f7e1a4945ade3ca82278a46b92b2ca433268a3fe"
+      sha256 "6137072fe1a270130b8b69d8eb6f2bd06c7e9ddaf6aa99bcac3a6e54b621963a"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-amd64"
-      sha256 "9b7f77b756bc3974ae4c97eaf32d23713a5f99302eb3ec091f19580091eab942"
+      sha256 "0e14117d2b9a45d4b839915ce567439773e1062264b3a68238823593287c519f"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/escherize/lll/releases/download/v#{version}/lll-linux-arm64"
-      sha256 "0ef0d877c6cd13c8010ae195e9e327f44ec7d9e3eeb10cbeb97f70f793c275b8"
+      sha256 "c84b33ed2f05bd89129cc05e8b32cdd5aff44e82f9b0fe66f9a24ec2b40dbe47"
     end
   end
 
